@@ -75,15 +75,6 @@ describe("GetCountry Fn:", () => {
     };
     expect(getCountry("IN")).toMatchObject(expObj);
   });
-  test("shows the country", () => {
-    expect(getCountry("IN")).toHaveProperty("name");
-  });
-  test("is defined", () => {
-    expect(getCountry("IN")).toBeDefined();
-  });
-  test("is Truthy", () => {
-    expect(getCountry("IN")).toBeTruthy();
-  });
 });
 
 describe("getCountryByCode Fn:", () => {
@@ -96,15 +87,6 @@ describe("getCountryByCode Fn:", () => {
     };
     expect(getCountryByCode("IN")).toMatchObject(expObj);
   });
-  test("doesn`t show code", () => {
-    expect(getCountryByCode("IN")).not.toHaveProperty("code");
-  });
-  test("is defined", () => {
-    expect(getCountryByCode("IN")).toBeDefined();
-  });
-  test("is Truthy", () => {
-    expect(getCountryByCode("IN")).toBeTruthy();
-  });
 });
 
 describe("getCapitalByName Fn:", () => {
@@ -115,28 +97,11 @@ describe("getCapitalByName Fn:", () => {
     };
     expect(getCapitalByName("IN")).toMatchObject(expObj);
   });
-  test("doesn`t show unnecessary keys", () => {
-    expect(getCapitalByName("IN")).not.toHaveProperty("code");
-    expect(getCapitalByName("IN")).not.toHaveProperty("area");
-    expect(getCapitalByName("IN")).not.toHaveProperty("continent");
-  });
-  test("is defined", () => {
-    expect(getCapitalByName("IN")).toBeDefined();
-  });
-  test("is Truthy", () => {
-    expect(getCapitalByName("IN")).toBeTruthy();
-  });
 });
 
 describe("getContinentByCode Fn:", () => {
   test("should show a continent", () => {
     expect(getContinentByCode("IN")).toBe("Asia");
-  });
-  test("is defined", () => {
-    expect(getContinentByCode("IN")).toBeDefined();
-  });
-  test("is Truthy", () => {
-    expect(getContinentByCode("IN")).toBeTruthy();
   });
 });
 
@@ -147,17 +112,5 @@ describe("getContinentData Fn:", () => {
       countries: ["Germany", "Denmark", "Ukraine", "United Kingdom"],
     };
     expect(getContinentData("EU")).toMatchObject(expObj);
-  });
-  test(" area is not a NaN", () => {
-    expect(getContinentData("EU").area).not.toBeNaN();
-  });
-  test(" area is not a Falsy value", () => {
-    expect(getContinentData("EU").area).not.toBeFalsy();
-  });
-  test("is defined", () => {
-    expect(getContinentData("EU")).toBeDefined();
-  });
-  test("is Truthy", () => {
-    expect(getContinentData("EU")).toBeTruthy();
   });
 });
