@@ -85,7 +85,7 @@ describe("getCountryByCode Fn:", () => {
       area: 3_287_590,
       continent: "AS",
     };
-    expect(getCountryByCode("IN")).toMatchObject(expObj);
+    expect(getCountryByCode("IN")).toEqual(expObj);
   });
 });
 
